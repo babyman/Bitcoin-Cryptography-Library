@@ -9,6 +9,7 @@
 package io.nayuki.bitcoin.crypto;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 
 // Miscellaneous utilities for the test suites.
@@ -33,12 +34,8 @@ final class Utils {
 	
 	
 	public static byte[] asciiToBytes(String s) {
-		try {
-			return s.getBytes("US-ASCII");
-		} catch (UnsupportedEncodingException e) {
-			throw new AssertionError(e);
-		}
-	}
+    return s.getBytes(StandardCharsets.US_ASCII);
+  }
 	
 	
 	

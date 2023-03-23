@@ -36,14 +36,14 @@ public final class Keccak256 {
 		
 		// XOR each message byte into the state, and absorb full blocks
 		int blockOff = 0;
-		for (int i = 0; i < msg.length; i++) {
-			state[blockOff / 8] ^= (msg[i] & 0xFFL) << (blockOff % 8 * 8);
-			blockOff++;
-			if (blockOff == BLOCK_SIZE) {
-				absorb(state);
-				blockOff = 0;
-			}
-		}
+    for (byte b : msg) {
+      state[blockOff / 8] ^= (b & 0xFFL) << (blockOff % 8 * 8);
+      blockOff++;
+      if (blockOff == BLOCK_SIZE) {
+        absorb(state);
+        blockOff = 0;
+      }
+    }
 		
 		// Final block and padding
 		state[blockOff / 8] ^= 0x01L << (blockOff % 8 * 8);

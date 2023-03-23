@@ -8,10 +8,10 @@
 
 package io.nayuki.bitcoin.crypto;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 
 /**
@@ -1712,7 +1712,7 @@ public final class EcdsaTest {
 			Sha256Hash msgHash = new Sha256Hash(testCase[3]);
 			int[] r = toUint256(testCase[4]);
 			int[] s = toUint256(testCase[5]);
-			assertTrue(Ecdsa.verify(publicKey, msgHash, r, s) == testCase[0].equals("1"));
+      assertEquals(Ecdsa.verify(publicKey, msgHash, r, s), testCase[0].equals("1"));
 		}
 	}
 	

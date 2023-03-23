@@ -844,6 +844,6 @@ public final class CurvePointMathTest {
 	}
 	
 	
-	private static Random rand = new Random();
+	private static final Random rand = new Random();
 	
 }

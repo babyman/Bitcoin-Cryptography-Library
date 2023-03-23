@@ -60,7 +60,7 @@ public final class Base58CheckTest {
 				try {
 					String bad = Base58Check.rawBytesToBase58(temp);
 					String good = Base58Check.bytesToBase58(b);
-					Assert.assertFalse(bad.equals(good));
+          Assert.assertNotEquals(bad, good);
 					Base58Check.base58ToBytes(bad);
 					Assert.fail();
 				} catch (IllegalArgumentException e) {}  // Pass
@@ -79,6 +79,6 @@ public final class Base58CheckTest {
 	}
 	
 	
-	private static Random rand = new SecureRandom();
+	private static final Random rand = new SecureRandom();
 	
 }

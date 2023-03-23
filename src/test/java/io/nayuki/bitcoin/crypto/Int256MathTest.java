@@ -436,7 +436,7 @@ public final class Int256MathTest {
 	private static final BigInteger FIELD_MODULUS = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F", 16);
 	
 	
-	private static Random rand = new Random();
+	private static final Random rand = new Random();
 	
 	
 	
